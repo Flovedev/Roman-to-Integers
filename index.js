@@ -11,17 +11,15 @@ function romanNumber(content) {
     let result = []
     let split = content.split("")
     for (let i = 0; i < split.length; i++) {
-        let element = split[i]
-        if (numbers[element] > result.at(-1)) {
+        if (numbers[split[i]] > result.at(-1)) {
             result[result.length - 1] = result.at(-1) * -1
         }
-        result.push(numbers[element])
+        result.push(numbers[split[i]])
     }
     let sum = result.reduce(function (a, b) {
         return a + b
     })
-
     console.log(sum)
 }
 
-romanNumber("MMDIII")
+romanNumber("XXVIII")
